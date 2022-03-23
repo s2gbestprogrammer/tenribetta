@@ -31,7 +31,9 @@
          {{$laporan['informasi']}} <br>
          {{$laporan['perintah']}} <br>
         </b>
-       {{$laporan['target']}}
+        @if ($laporan['target'] !== "0")
+            {{$laporan['target']}}
+        @endif
    </p> <hr></div>
   </td></tr></thead>
   <tbody><tr><td>
@@ -42,7 +44,9 @@
                 <img src="{{$data_chat['gambar']}}" alt="" width="200px" height="">
                 @endif
                 <p> Nama pengirim: {{$data_chat['nama']}}</p>
+                @if($data_chat['lokasi'] !== "")
                 <p>Lokasi: {{$data_chat['lokasi']}}</p>
+                @endif
                 <p>Tanggal: {{$data_chat['waktu']}}</p>
                 <hr>
             </div>

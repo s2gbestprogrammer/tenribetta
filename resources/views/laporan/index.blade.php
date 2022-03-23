@@ -38,7 +38,15 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$a['perintah']}}</td>
                                         <td>{{$a['informasi']}}</td>
-                                        <td>{{$a['target']}}</td>
+                                        <td>
+                                            @php
+                                                if($a['target'] == '0'){
+                                                    echo "-";
+                                                } else {
+                                                    echo $a['target'];
+                                                }
+                                            @endphp
+                                        </td>
                                         <td>
                                             <a href="{{route('printrow',$a['timestamp'])}}" class="btn btn-primary" target="_blank"><i class="fas fa-print" ></i></a>
                                         </td>
